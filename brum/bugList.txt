@@ -1,0 +1,8 @@
+-- Bug List:
+	- Los banners de publicidad no se actualizan ni se quita el actual. La peticion se realiza correctamente.
+	- El contador de clicks de los banners de publicidad funciona, pero no redirecciona al enlaçe.
+	- Fallos de adaptabilidad
+	- Muy fragil
+
+-- Soluciones:
+	- Utilizar una semana para arreglar los errores y añadir funcionalidades pendientes por falta de tiempo.

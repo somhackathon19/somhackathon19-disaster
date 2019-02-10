@@ -1,0 +1,82 @@
+body {
+    font: 20px sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    background-image: url(../img/foto1.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div#uno,
+div#dos {
+    width: 100%;
+    /*background-color:rgba(237, 239, 222,0.6);*/
+    padding-top: 100px;
+}
+
+.wrapper {
+    width: 350px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    min-width: 300px;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 25px;
+}
+
+p {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=date] {
+    width: 100%;
+    font-size: 15px;
+    padding: 8px 10px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=reset],
+input[type=submit] {
+    padding: 15 px;
+    width: 48%;
+    background-color: rgb(93, 167, 209);
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input[type=reset]:hover,
+input[type=submit]:hover {
+    background-color: beige;
+}
+
+input:focus {
+    background-color: lightcyan;
+}
+
+label {
+    font-size: 15px;
+}
