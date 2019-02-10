@@ -1,0 +1,47 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+    <style>
+        #mapid { height: 600px; }
+    </style>
+</head>
+<body>
+    <div id="mapid"></div>
+    <script>
+        //Create map
+        var mymap = L.map('mapid').setView([41.5409, 2.4333], 14);
+        //Create tile layer
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: 'pk.eyJ1IjoianVpc2RlIiwiYSI6ImNqcnd1cnNieTBmNjA0NG4xNXNwMzc3bW4ifQ.urxjLoCN_fuZ_JeKwV8W2A'
+        }).addTo(mymap);
+        //Inizializate popup
+        var popup = L.popup();
+        //Onclick event on map
+        mymap.on('click', function onMapClick(e) {
+            popup
+                //Popup with coords 
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString().substring(7, e.latlng.toString().length - 1))
+                .openOn(mymap);
+                // Allow to knows coordenates.
+                console.log(e.latlng.toString().substring(7, e.latlng.toString().length - 1));
+        });
+        //Set market
+        var marker = L.marker([41.53955, 2.443256]).addTo(mymap);
+        //Bind popup to marker
+        marker.bindPopup("<b>Hello world!</b><br><a href='#'>This is working somehow</a>");
+    </script>
+</body>
+</html>
